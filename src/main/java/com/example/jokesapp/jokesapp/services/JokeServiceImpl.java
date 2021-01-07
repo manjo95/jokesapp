@@ -8,9 +8,14 @@ public class JokeServiceImpl implements JokeService{
 
     private final ChuckNorrisQuotes chuckNorrisQuotes;
 
-    public JokeServiceImpl() {
-        this.chuckNorrisQuotes = new ChuckNorrisQuotes();
+    //Constructor Injected - requires chucknorris bean
+    public JokeServiceImpl(ChuckNorrisQuotes chuckNorrisQuotes) {
+        this.chuckNorrisQuotes = chuckNorrisQuotes;
     }
+    //property injected
+    //public JokeServiceImpl() {
+        //this.chuckNorrisQuotes = new ChuckNorrisQuotes();
+    //}
 
     @Override
     public String getJoke() {
